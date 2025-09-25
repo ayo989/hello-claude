@@ -7,10 +7,58 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Hello Claude!</h1>
-        <p class="message">Built with Claude Code!</p>
-        <div class="decorative-element">✨</div>
+    <!-- Animated background elements -->
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+        <div class="shape shape-5"></div>
     </div>
+
+    <!-- Bouncing ball animation -->
+    <div class="bouncing-ball"></div>
+
+    <div class="container">
+        <h1 class="animated-title">Hello Claude!</h1>
+        <p class="message pulse">Built with Claude Code!</p>
+
+        <!-- Interactive button -->
+        <button class="magic-button" onclick="createFireworks()">✨ Click Me! ✨</button>
+
+        <!-- Progress bar animation -->
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+            <span class="progress-text">Loading awesome...</span>
+        </div>
+
+        <!-- Floating icons -->
+        <div class="floating-icons">
+            <span class="icon">🚀</span>
+            <span class="icon">⚡</span>
+            <span class="icon">🎨</span>
+            <span class="icon">💫</span>
+        </div>
+    </div>
+
+    <!-- Fireworks container -->
+    <div class="fireworks-container"></div>
+
+    <script>
+        function createFireworks() {
+            const container = document.querySelector('.fireworks-container');
+
+            for (let i = 0; i < 15; i++) {
+                const firework = document.createElement('div');
+                firework.className = 'firework';
+                firework.style.left = Math.random() * 100 + '%';
+                firework.style.top = Math.random() * 100 + '%';
+                firework.style.animationDelay = Math.random() * 0.5 + 's';
+                container.appendChild(firework);
+
+                setTimeout(() => firework.remove(), 1000);
+            }
+        }
+    </script>
 </body>
 </html>
